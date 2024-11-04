@@ -10,7 +10,7 @@ Fixed::Fixed(const int n) : rawBits(n << fractionalBits)
 	std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed::Fixed(const float n) : rawBits(static_cast<int>(std::roundf(n * (1 << fractionalBits))))
+Fixed::Fixed(const float n) : rawBits(static_cast<int>(roundf(n * (1 << fractionalBits))))
 {
 	std::cout << "Float constructor called" << std::endl;
 }

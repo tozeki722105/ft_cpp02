@@ -4,7 +4,7 @@ Fixed::Fixed() : rawBits(0) {}
 
 Fixed::Fixed(const int n) : rawBits(n << fractionalBits) {}
 
-Fixed::Fixed(const float n) : rawBits(static_cast<int>(std::roundf(n * (1 << fractionalBits)))) {}
+Fixed::Fixed(const float n) : rawBits(static_cast<int>(roundf(n * (1 << fractionalBits)))) {}
 
 Fixed::~Fixed() {}
 
