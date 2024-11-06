@@ -88,7 +88,7 @@ Fixed Fixed::operator/(const Fixed& rhs) const
 	return (Fixed(this->toFloat() / rhs.toFloat()));
 }
 
-Fixed Fixed::operator++()
+Fixed& Fixed::operator++()
 {
 	this->rawBits += 1;
 	return (*this);
@@ -101,7 +101,7 @@ Fixed Fixed::operator++(int)
 	return (tmp);
 }
 
-Fixed Fixed::operator--()
+Fixed& Fixed::operator--()
 {
 	this->rawBits -= 1;
 	return (*this);
