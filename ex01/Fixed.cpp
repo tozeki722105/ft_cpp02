@@ -53,7 +53,10 @@ float Fixed::toFloat(void) const
 
 int Fixed::toInt(void) const
 {
-	return (this->rawBits >> this->FRACTIONAL_BITS);
+	int fractalPart = rawBits & FRACTAL_MASK;
+	if (rawBits < 0 && fractalPart)
+		return ((rawBits >> FRACTIONAL_BITS) + 1);
+	return (rawBits >> FRACTIONAL_BITS);
 }
 
 std::ostream &operator<<(std::ostream &os, const Fixed &fixed)

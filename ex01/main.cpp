@@ -21,4 +21,11 @@ int main()
 	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
 	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
 	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+
+	// Fixed a(-3.0f);
+	// Fixed b(-3.1f);
+	// Fixed c(-3.9f);
+	// std::cout << a.toInt() << std::endl;
+	// std::cout << b.toInt() << std::endl;
+	// std::cout << c.toInt() << std::endl;
 }

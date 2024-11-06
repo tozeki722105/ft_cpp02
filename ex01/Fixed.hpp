@@ -9,6 +9,7 @@ class Fixed
 private:
 	int              rawBits;
 	const static int FRACTIONAL_BITS = 8;
+	const static int FRACTAL_MASK = (1 << FRACTIONAL_BITS) - 1;
 
 public:
 	Fixed();
