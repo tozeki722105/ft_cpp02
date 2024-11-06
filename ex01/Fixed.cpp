@@ -5,12 +5,12 @@ Fixed::Fixed() : rawBits(0)
 	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const int n) : rawBits(n << fractionalBits)
+Fixed::Fixed(const int n) : rawBits(n << FRACTIONAL_BITS)
 {
 	std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed::Fixed(const float n) : rawBits(static_cast<int>(roundf(n * (1 << fractionalBits))))
+Fixed::Fixed(const float n) : rawBits(static_cast<int>(roundf(n * (1 << FRACTIONAL_BITS))))
 {
 	std::cout << "Float constructor called" << std::endl;
 }
@@ -48,12 +48,12 @@ void Fixed::setRawBits(int const raw)
 
 float Fixed::toFloat(void) const
 {
-	return (static_cast<float>(this->rawBits) / (1 << this->fractionalBits));
+	return (static_cast<float>(this->rawBits) / (1 << this->FRACTIONAL_BITS));
 }
 
 int Fixed::toInt(void) const
 {
-	return (this->rawBits >> this->fractionalBits);
+	return (this->rawBits >> this->FRACTIONAL_BITS);
 }
 
 std::ostream &operator<<(std::ostream &os, const Fixed &fixed)
